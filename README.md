@@ -18,7 +18,7 @@ Users will come to the website to find way of better sleep and the products for 
 
 Then I created a user stories to better define the needs and further requirements of the site.
 
-[User Stories](https://docs.google.com/viewer?url=${Readme-purpose/user-stories.pdf})
+[User Stories](Readme-purpose/user-stories.pdf)
 
 <!-- Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 
