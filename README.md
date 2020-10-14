@@ -31,7 +31,7 @@ Taking all this into account, I have combine and set the following visual page r
 
 I used these requirements to create wireframes.
 
-[Open Wireframes](Readme-purpose\wireframe-desktop-Home-page.pdf)
+[Open Wireframes](Readme-purpose/wireframe-desktop-Home-page.pdf)
 
 
 
