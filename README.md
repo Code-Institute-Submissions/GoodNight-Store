@@ -18,21 +18,20 @@ Users will come to the website to find way of better sleep and the products for 
 
 Then I created a user stories to better define the needs and further requirements of the site.
 
-[User Stories](Readme-purpose/user-stories.pdf)
+[Open User Stories](Readme-purpose/user-stories.pdf)
 
-<!-- Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
+Taking all this into account, I have combine and set the following visual page requirements:
+-   modern, friendly, dreamlike design,
+-   responsiveness,
+-   the color scheme and pictures must be associated with sleeping,
+-   first page needs to have main picture, overview of products and promotions,
+-   navigation bar needs to contain basket button and categories selectors,
+-   products view page needs to display products with image and basic information in columns with quantity of columns dependence of the screen size,
+-   product page needs to display bigger images and detailed information about product,
 
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
+I used these requirements to create wireframes.
 
-As a user type, I want to perform an action, so that I can achieve a goal.
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included as a pdf file in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
- -->
-
-
-
-
-
-
+[Open Wireframes](Readme-purpose\wireframe-desktop-Home-page.pdf)
 
 
 
