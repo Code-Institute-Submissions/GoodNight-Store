@@ -31,9 +31,30 @@ Taking all this into account, I have combine and set the following visual page r
 
 I used these requirements to create wireframes.
 
-[Open Wireframes](Readme-purpose/wireframe-desktop-Home-page.pdf)
+-   [Home Page - Desktop](Readme-purpose/wireframe-desktop-Home-page.pdf)
+-   [Home Page - Mobile](Readme-purpose/wireframe-mobile-Home-page.pdf)
 
 
+<!-- 
+bag, checkout takes from code insitute, use the django 3
+
+webhooks are extra,
+
+first create base application with payment,
+
+extra models:
+
+discount class, reviews
+
+1st home page
+
+2. accounts, allauth documentation
+
+3. Products,
+
+4. Profile
+
+5. Payments -->
 
 
 <!-- Features
