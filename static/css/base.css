@@ -1,0 +1,26 @@
+html {
+    height: 100%;
+}
+
+.logo-caption {
+    color: #ffffff;
+    /* color: #FFD700; */
+    font-family: 'Exo 2', sans-serif;
+    text-transform: uppercase;
+}
+
+.main-header {
+    background-color: #000000;
+}
+
+.home-header {
+    background-image: url(/media/images/mooncapnostar.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+
+}
+
+.main-caption {
+    color: #FFD700;
+}
