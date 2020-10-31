@@ -3,17 +3,77 @@ html {
 }
 
 .logo-caption {
-    color: #ffffff;
+
     /* color: #FFD700; */
     font-family: 'Exo 2', sans-serif;
     text-transform: uppercase;
 }
 
-.main-header {
-    background-color: #000000;
+.vh-my-75 {
+    height: 75vh;
 }
 
-.home-header {
+.main-header {
+    background-color: #000000;
+    
+}
+
+.empty-container {
+    height: 10vh;
+    width: 98vw;
+}
+
+.top-home-img{
+    background-image: url(/media/images/woman-sleep.webp);
+    background-size: cover;
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.pillow-img {
+    background-image: url(/media/images/blue-pillows.webp);
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.aroma-section{
+    background-image: url(/media/images/aromatizer-main.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+}
+
+.aroma-captions {
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.pyjama-1 {
+    background-image: url(/media/images/pijama-main-1.jpg);
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.pyjama-2 {
+    background-image: url(/media/images/pijama-main-2.jpg);
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.pyjama-3 {
+    background-image: url(/media/images/pijama-main-3.jpg);
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* .home-header {
     background-image: url(/media/images/mooncapnostar.jpg);
     background-size: cover;
     background-position: center;
@@ -24,3 +84,7 @@ html {
 .main-caption {
     color: #FFD700;
 }
+
+.pillows-art {
+    background-image: url(/media/images/blue-pillows.jpg);
+} */
