@@ -15,12 +15,12 @@ html {
 
 .main-header {
     background-color: #000000;
-    
+    height: 100px;
+    z-index: 100;
 }
 
 .empty-container {
-    height: 10vh;
-    width: 98vw;
+    padding-top: 100px;
 }
 
 .top-home-img{
@@ -72,7 +72,16 @@ html {
     background-position: center;
     background-repeat: no-repeat;
 }
-
+/* 
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: white;
+	z-index: -1;
+} */
 /* .home-header {
     background-image: url(/media/images/mooncapnostar.jpg);
     background-size: cover;
