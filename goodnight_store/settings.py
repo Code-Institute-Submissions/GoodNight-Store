@@ -57,8 +57,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'home',         # add home app
-    'products'
-    
+    'products',
+    'shopbag',
 ]
 
 
@@ -113,7 +113,7 @@ ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
-ACCOUNT_USERNAME_REQURIED=True
+ACCOUNT_USERNAME_REQURIED = True
 
 WSGI_APPLICATION = 'goodnight_store.wsgi.application'
 
