@@ -1,10 +1,9 @@
+import json
+import time
+
 from django.http import HttpResponse
 from products.models import Product
 from .models import Order, OrderLineItem
-
-
-import json
-import time
 
 class StripeWH_Handler:
     """Handle Stripe webhooks"""
