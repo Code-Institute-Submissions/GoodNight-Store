@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Product, Category
 from django.conf import settings
 
+from .models import Product, Category
+from .forms import ProductForm
 
 MEDIA_URL = settings.MEDIA_URL
 
@@ -66,3 +67,15 @@ def product_details(request, product_id):
     }
 
     return render(request, 'products/product_details.html', context)
+
+
+
+def add_product(request):
+    """Add product to the store"""
+    form = ProductForm()
+    template = 'products/add_product.html'
+    context = {
+        'form': form
+    }
+
+    return render(request, template, context)
