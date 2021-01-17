@@ -40,7 +40,7 @@
   <body>
     <header class="container-fluid position-fixed top-0 main-header">
       <div class="row pt-3 pb-2">
-        <div class="col">
+        <div class="col col-md-4">
           <nav class="navbar navbar-expand-sm navbar-dark bg-transparent">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -55,18 +55,18 @@
             <h1 class="display-6 logo-caption"><strong>GN</strong></h1>
           </a>
         </div>
-        <div class="col d-none d-md-block text-center">
+        <div class="col col-md-4 d-none d-md-block text-center">
           <a href="{% url 'home' %}" class="nav-link">
             <h1 class="display-6 logo-caption"><strong>Good Night</strong></h1>
           </a>
         </div>
-        <div class="col">
+        <div class="col col-md-4">
           <ul class="list-inline list-unstyled text-center text-sm-center text-md-right">
             <li class="list-inline-item">
               <a class="{% if item_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
                 <div class="text-center">
                     <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                    <p class="my-0 d-none d-sm-block">
+                    <p class="my-0 d-none d-md-block">
                       {% if grand_total %}
                                         ${{ grand_total|floatformat:2 }}
                                     {% else %}
@@ -80,7 +80,7 @@
               <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="text-center">
                   <div><i class="fas fa-user fa-lg"></i></div>
-                  <p class="my-0 d-none d-sm-block">My Account</p>
+                  <p class="my-0 d-none d-md-block">My Account</p>
                   </div>
                   </a>
                   <div class="dropdown-menu border-0" aria-labelledby="user-options">

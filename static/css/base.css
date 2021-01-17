@@ -15,12 +15,12 @@ html {
 
 .main-header {
     background-color: #000000;
-    
+    white-space: nowrap;
     z-index: 100;
 }
 
 .empty-container {
-    padding-top: 100px;
+    padding-top: 120px;
 }
 
 .top-home-img{
@@ -100,3 +100,14 @@ html {
     background-image: url(/media/images/blue-pillows.jpg);
 } */
 /* ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss */
+
+@media (max-width:382px) {
+    .empty-container {
+        padding-top: 166px;
+    }
+}
+@media (max-width:236px) {
+    .empty-container {
+        padding-top: 218px;
+    }
+}
