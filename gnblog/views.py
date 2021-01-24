@@ -1,3 +1,6 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def blog(request):
+    """ A view to render gnblog.html template """
+    return render(request, 'gnblog/blog.html')

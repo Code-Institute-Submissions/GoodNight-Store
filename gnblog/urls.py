@@ -3,5 +3,5 @@ from . import views         #import views from home path
 
 
 urlpatterns = [
-    path('', views.index, name='home'),     # add index from views to the path named home
+    path('', views.blog, name='blog'),   
 ]
