@@ -73,6 +73,50 @@ html {
     background-repeat: no-repeat;
 }
 
+.btn-black {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.btn-black:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+}
+
+.btn-primary:hover {
+    background-color: #ffffff;
+    color: #007bff;
+    border: 1px solid #007bff;
+}
+
+.my-main-link {
+    color: #000000;
+}
+
+.my-main-link:hover {
+    color: #000000;
+    font-weight: bolder;
+    text-decoration: none;
+    border: 1px solid #000000;
+}
+
+
+/* bootstrap toasts  */
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 99999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
 
 /* 
 .overlay {

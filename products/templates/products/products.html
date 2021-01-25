@@ -58,7 +58,7 @@
                         {% if current_categories or current_sorting != 'None_None' %}
                         <span class="small"><a href="{% url 'products' %}">Products Home</a> | </span>
                         {% endif %}
-                        {{ products|length }} Products<strong>
+                        {{ products|length }} Products
                     </p>
                 </div>
             </div>
@@ -67,7 +67,7 @@
                 <!-- <div class="col-12 col-sm-6 col-lg-6 col-xl-3 mx-3"> -->
                     <div class="col-12 col-sm-6 col-md-4">
                     <div class="card mb-3" >
-                        <a class="text-decoration-none" href="{% url 'product_details' product.id %}">
+                        <a class="my-main-link" href="{% url 'product_details' product.id %}">
                         <div class="row no-gutters">
                             <div class="col-12 col-sm-6">
                                 {% if product.image %}
@@ -75,10 +75,10 @@
                                 <img class="img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
                             
                             {% else %}
-                            <a href="{% url 'product_details' product.id %}">
+                            
                                 <img class="img-fluid" src="{{ MEDIA_URL }}no-image.jpg"
                                     alt="{{ product.name }}">
-                            </a>
+                            
                             {% endif %}
                             </div>
                             <div class="col-12 col-sm-6">
@@ -122,7 +122,7 @@
                                 data-item_id="{{ product.id }}"
                                 id="id_qty_{{ product.id }}">
                                 
-                                <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to bag now">
+                                <input type="submit" class="btn btn-primary rounded-2 text-uppercase mt-5" value="Add to bag now">
                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             </div>
                         </div>
