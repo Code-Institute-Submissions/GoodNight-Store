@@ -14,7 +14,6 @@ class Post(models.Model):
     postUrl = AutoSlugField(populate_from='title')
     author = models.ForeignKey(User, on_delete=models.SET_DEFAULT, default="anonymous author")
     created = models.DateTimeField(auto_now=True)
-    status = models.IntegerField(choices=STATUS, default=0)
 
     class Meta:
         ordering = ['-created']
