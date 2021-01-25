@@ -4,6 +4,10 @@ from django.db import models
 
 class Category(models.Model):
 
+    description = models.TextField(default="This is a text which describe category and will be displayed in product page")
+    image = models.ImageField(null=True, blank=True)
+    image_url = models.URLField(max_length=1024, null=True, blank=True)
+
     class Meta:
         verbose_name_plural = 'Categories'      
     name = models.CharField(max_length=254)

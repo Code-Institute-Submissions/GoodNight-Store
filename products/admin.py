@@ -18,7 +18,9 @@ class ProductAdmin(admin.ModelAdmin):
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
         'friendly_name',
+        'image',
         'name',
+        'description',
     )
 
 admin.site.register(Product, ProductAdmin)
