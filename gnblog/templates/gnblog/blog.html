@@ -25,7 +25,19 @@
                 <h5 class="card-title">{{ post.title }}</h5>
                 <h6 class="card-subtitle">{{ post.subtitle }}</h6>
                 <p class="card-text">{{ post.body }}</p>
+                <div class="row">
+                    <div class="col-6">
                 <a href="{% url 'post_detail' post.slug %}" class="btn btn-primary">Read more</a>
+            </div>
+            <div class="col-6 text-right">
+                {% if request.user.is_superuser %}
+                <small>
+                    <a href="{% url 'edit_post' post.slug %}">Edit</a>
+                    <a class="text-danger ml-3" href="{% url 'remove_post' post.slug %}">Delete</a>
+                </small>
+                {% endif %}
+            </div>
+            </div>
                 </div>
             </div>
         </div>

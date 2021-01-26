@@ -68,7 +68,6 @@ def product_details(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     reviews = product.review.filter(active=True)
     new_review = None
-    total_rate = reviews.aggregate(Avg('rate'))
 
     if request.method == 'POST':
         review_form = ProductReviewForm(data=request.POST)
@@ -84,7 +83,6 @@ def product_details(request, product_id):
         'reviews': reviews,
         'new_review': new_review,
         'review_form': review_form,
-        'total_rate': total_rate,
     }
 
     return render(request, 'products/product_details.html', context)
