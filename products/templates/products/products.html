@@ -62,17 +62,17 @@
                     </p>
                 </div>
             </div>
-            <div class="row mt-2 mb-2">
+            <div class="row mt-2 mb-4">
                 {% for product in products %}
-                <!-- <div class="col-12 col-sm-6 col-lg-6 col-xl-3 mx-3"> -->
+                
                     <div class="col-12 col-sm-6 col-md-4">
-                    <div class="card mb-3" >
+                    <div class="card mb-5" id="product-card" >
                         <a class="my-main-link" href="{% url 'product_details' product.id %}">
                         <div class="row no-gutters">
                             <div class="col-12 col-sm-6">
                                 {% if product.image %}
                             <!-- <a href="{% url 'product_details' product.id %}"> -->
-                                <img class="img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                <img class="img-fluid" style="height:200px;" src="{{ product.image.url }}" alt="{{ product.name }}">
                             
                             {% else %}
                             
@@ -107,14 +107,14 @@
                                 {% if request.user.is_superuser %}
                                 <small class="ml-3">
                                     <a href="{% url 'edit_product' product.id %}">Edit</a>
-                                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                    <a class="text-danger ml-3 mr-2" href="{% url 'delete_product' product.id %}">Delete</a>
                                 </small>
                             {% endif %}
                             </div>
                         </div>
                         <div class="row no-gutters">
                             
-                            <div class="col-12">
+                            <div class="col-12 mb-1">
                                 <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                                     {% csrf_token %}
                                     
@@ -123,13 +123,32 @@
                                 data-item_id="{{ product.id }}"
                                 id="id_qty_{{ product.id }}">
                                 
-                                <input type="submit" class="btn btn-primary rounded-2 text-uppercase mt-5" value="Add to bag now">
+                                <input type="submit" class="btn btn-primary rounded-2 text-uppercase mt-2" value="Add to bag now">
                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             </div>
                         </div>
                     </div>
                 </div>
-            
+                <!-- {% if forloop.counter|divisibleby:1 %}
+                <div class="col-12 d-sm-none mb-5">
+                    <hr style="background-color:black;">
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:2 %}
+                <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                    <hr style="background-color:black;">
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:3 %}
+                <div class="col-12 d-none d-md-block d-xl-none mb-5">
+                    <hr style="background-color:black;">
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:4 %}
+                <div class="col-12 d-none d-xl-block mb-5">
+                    <hr style="background-color:black;">
+                </div>
+                {% endif %} -->
                 
                 <!-- </div> -->
                     <!-- <div class="card h-100 border-0">
@@ -167,26 +186,7 @@
                         </div>
                     </div> -->
                 
-                <!-- {% if forloop.counter|divisibleby:1 %}
-                <div class="col-12 d-sm-none mb-5">
-                    <hr>
-                </div>
-                {% endif %}
-                {% if forloop.counter|divisibleby:2 %}
-                <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-                    <hr>
-                </div>
-                {% endif %}
-                {% if forloop.counter|divisibleby:3 %}
-                <div class="col-12 d-none d-lg-block d-xl-none mb-5">
-                    <hr>
-                </div>
-                {% endif %}
-                {% if forloop.counter|divisibleby:4 %}
-                <div class="col-12 d-none d-xl-block mb-5">
-                    <hr>
-                </div>
-                {% endif %} -->
+
 
                 {% endfor %}
             </div>

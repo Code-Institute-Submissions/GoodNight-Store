@@ -94,13 +94,15 @@ html {
     color: #000000;
 }
 
-.my-main-link:hover {
+#product-card:hover {
     color: #000000;
-    font-weight: bolder;
     text-decoration: none;
     border: 1px solid #000000;
 }
-
+.my-main-link:hover {
+    color: #000000;
+    text-decoration: none;
+}
 
 /* bootstrap toasts  */
 .message-container {
