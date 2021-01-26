@@ -4,9 +4,8 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
-from django.db.models import Avg
 
-from .models import Product, Category, ProductReview
+from .models import Product, Category
 from .forms import ProductForm, ProductReviewForm
 
 MEDIA_URL = settings.MEDIA_URL

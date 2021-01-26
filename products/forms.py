@@ -30,3 +30,4 @@ class ProductReviewForm(forms.ModelForm):
             'body',
             'rate',
         )
+        

@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
-from django.views import generic
 from .models import Post
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -31,7 +30,7 @@ def add_post(request):
         return redirect(reverse ('home'))
 
     if request.method == 'POST':
-        form = BlogPostForm(request.POST)
+        form = BlogPostForm(request.POST, request.FILES)
         if form.is_valid():
             post = form.save()
             messages.success(request, 'Succesfully added Post!')
@@ -57,7 +56,7 @@ def edit_post(request, slug):
 
     post = get_object_or_404(Post, slug=slug)
     if request.method == 'POST':
-        form = BlogPostForm(request.POST, instance=post)
+        form = BlogPostForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
             form.save()
             messages.success(request, 'Succesfully updated post!')

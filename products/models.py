@@ -33,7 +33,10 @@ class Product(models.Model):
     def rating(self):
         all_rates = self.review.all()
         rate_dict = all_rates.aggregate(Avg('rate'))
-        return round(rate_dict['rate__avg'], 2)
+        if len(all_rates) == 0:
+            return 'N/A'
+        else:
+            return round(rate_dict['rate__avg'], 2)
 
     def __str__(self):
         return self.name

@@ -9,6 +9,8 @@ class Post(models.Model):
     slug = AutoSlugField(populate_from='title')
     author = models.ForeignKey(User, on_delete=models.SET_DEFAULT, default="anonymous author")
     created = models.DateTimeField(auto_now=True)
+    image_url = models.URLField(max_length=1024, null=True, blank=True)
+    image = models.ImageField(null=True, blank=True)
 
     class Meta:
         ordering = ['-created']
