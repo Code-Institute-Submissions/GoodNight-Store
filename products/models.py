@@ -26,7 +26,6 @@ class Product(models.Model):
     short_description = models.CharField(max_length=560, null=True, blank=True)
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
 
@@ -35,7 +34,7 @@ class Product(models.Model):
 
 
 class ProductReview(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='review')
+    product = models.ForeignKey('Product', on_delete=models.CASCADE, related_name='review')
     name = models.CharField(max_length=100)
     email = models.EmailField()
     body = models.TextField()
