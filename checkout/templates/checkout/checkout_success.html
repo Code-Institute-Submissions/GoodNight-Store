@@ -66,7 +66,7 @@
                             </p>
                         </div>
                         <div class="col-12 col-md-8 text-md-right">
-                            <p class="small mb-0">{{ item.quantity }} @ ${{ item.product.price }} each</p>
+                            <p class="small mb-0">{{ item.quantity }} @ €{{ item.product.price }} each</p>
                         </div>
                     </div>
                     {% endfor %}
@@ -201,10 +201,7 @@
                     </a>
                 {% else %}
                     <a href="{% url 'products' %}?category=new_arrivals,deals,clearance" class="btn btn-black rounded-0 my-2">
-                        <span class="icon mr-2">
-                            <i class="fas fa-gifts"></i>
-                        </span>
-                        <span class="text-uppercase">Now check out the latest deals!</span>
+                        <span class="text-uppercase">Check your orders history</span>
                     </a>
                 {% endif %}
 			</div>
