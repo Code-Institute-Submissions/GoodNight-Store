@@ -4,9 +4,10 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
+from django.db.models import Avg
 
-from .models import Product, Category
-from .forms import ProductForm
+from .models import Product, Category, ProductReview
+from .forms import ProductForm, ProductReviewForm
 
 MEDIA_URL = settings.MEDIA_URL
 
@@ -65,9 +66,25 @@ def product_details(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
+    reviews = product.review.filter(active=True)
+    new_review = None
+    total_rate = reviews.aggregate(Avg('rate'))
+
+    if request.method == 'POST':
+        review_form = ProductReviewForm(data=request.POST)
+        if review_form.is_valid():
+            new_review = review_form.save(commit=False)
+            new_review.product = product
+            new_review.save()
+    else:
+        review_form = ProductReviewForm()
 
     context = {
         'product': product,
+        'reviews': reviews,
+        'new_review': new_review,
+        'review_form': review_form,
+        'total_rate': total_rate,
     }
 
     return render(request, 'products/product_details.html', context)

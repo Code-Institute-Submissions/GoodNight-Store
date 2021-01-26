@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 # Create your models here.
 
@@ -31,3 +32,19 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class ProductReview(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='review')
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    body = models.TextField()
+    added_on = models.DateTimeField(auto_now=True)
+    rate = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(5)])
+    active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ['added_on']
+
+    def __str__(self):
+        return '{} reviewed this product {} with {} star and comment: {}'.format(self.name, self.added_on, self.rate, self.body)

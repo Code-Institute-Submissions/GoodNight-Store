@@ -118,32 +118,10 @@ html {
     height: 2px;
 }
 
-/* 
-.overlay {
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	position: fixed;
-	background: white;
-	z-index: -1;
-} */
-/* .home-header {
-    background-image: url(/media/images/mooncapnostar.jpg);
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-
+.review-container {
+    height: 300px;
 }
 
-.main-caption {
-    color: #FFD700;
-}
-
-.pillows-art {
-    background-image: url(/media/images/blue-pillows.jpg);
-} */
-/* ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss */
 
 @media (max-width:382px) {
     .empty-container {
