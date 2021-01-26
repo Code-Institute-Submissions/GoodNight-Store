@@ -124,7 +124,6 @@ html {
     height: 300px;
 }
 
-
 @media (max-width:382px) {
     .empty-container {
         padding-top: 166px;

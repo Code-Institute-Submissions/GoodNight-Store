@@ -66,7 +66,7 @@
                 {% for product in products %}
                 
                     <div class="col-12 col-sm-6 col-md-4">
-                    <div class="card mb-5" id="product-card" >
+                    <div class="card mb-5" id="product-card_{{ product.id }}" >
                         <a class="my-main-link" href="{% url 'product_details' product.id %}">
                         <div class="row no-gutters">
                             <div class="col-12 col-sm-6">
@@ -125,6 +125,7 @@
                                 
                                 <input type="submit" class="btn btn-primary rounded-2 text-uppercase mt-2" value="Add to bag now">
                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -197,12 +198,12 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<script type="text/javascript">
+<script>
     $('.btt-link').click(function (e) {
         window.scrollTo(0, 0)
     })
 </script>
-<script type="text/javascript">
+<script>
     $('#sort-selector').change(function () {
         var selector = $(this);
         var currentUrl = new URL(window.location);
