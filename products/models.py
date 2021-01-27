@@ -30,13 +30,15 @@ class Product(models.Model):
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
 
+
     def rating(self):
-        all_rates = self.review.all()
-        rate_dict = all_rates.aggregate(Avg('rate'))
-        if len(all_rates) == 0:
-            return 'N/A'
-        else:
+        try:
+            all_rates = self.review.all()
+            rate_dict = all_rates.aggregate(Avg('rate'))
             return round(rate_dict['rate__avg'], 2)
+        except Exception as ex:
+            print(ex)
+            return 'N/A'
 
     def __str__(self):
         return self.name
