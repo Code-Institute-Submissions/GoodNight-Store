@@ -23,8 +23,8 @@ html {
     padding-top: 120px;
 }
 
-.top-home-img{
-    background-image: url({% url static '/media/images/woman-sleep.webp' %});
+.top-home-img {
+    background-image: url(static("media/images/woman-sleep.webp"));
     background-size: cover;
     background-position: right top;
     background-repeat: no-repeat;
