@@ -40,7 +40,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['gn-ecommerce.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['gn-ecommerce.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -115,8 +115,7 @@ AUTHENTICATION_BACKENDS = [
 
     # `allauth` specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
-    
-]
+    ]
 
 SITE_ID = 1
 
@@ -137,9 +136,9 @@ WSGI_APPLICATION = 'goodnight_store.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-if 'DATABASE_URL' in os.envrion:
+if 'DATABASE_URL' in env:
     DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        'default': dj_database_url.parse(env('DATABASE_URL'))
     }
 else:
     DATABASES = {
