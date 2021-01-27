@@ -1,1 +1,1 @@
-web: gunicorn goodnight-store.wsgi:application
+web: gunicorn goodnight_store.wsgi:application
