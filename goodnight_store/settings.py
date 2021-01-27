@@ -134,8 +134,8 @@ ACCOUNT_USERNAME_REQURIED = True
 WSGI_APPLICATION = 'goodnight_store.wsgi.application'
 
 
-Database
-https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+# Database
+# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
     'default': {
@@ -143,6 +143,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
 
 
 
