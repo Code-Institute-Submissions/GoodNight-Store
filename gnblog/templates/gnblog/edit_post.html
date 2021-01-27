@@ -33,7 +33,7 @@
                     {% endfor %}
                     
                     <div class="text-right">
-                        <a class="btn btn-outline-black rounded-0" href="{% url 'blog' %}">Cancel</a>
+                        <a class="btn btn-primary rounded-0" href="{% url 'blog' %}">Cancel</a>
                         <button class="btn btn-black rounded-0" type="submit">Save Post</button>
                     </div>
                 </form>
@@ -41,4 +41,13 @@
         </div>
     </div>
 
+{% endblock %}
+{% block postloadjs %}
+    {{ block.super }}
+    <script>
+        $('#id_image').change(function() {
+            var file = $('#id_image')[0].files[0];
+            $('#filename').text(`Image will be set to: ${file.name}`);
+        });
+    </script>
 {% endblock %}
