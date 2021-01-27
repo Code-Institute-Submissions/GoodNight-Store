@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load media %}
 
 {% block page_header %}
     
@@ -16,7 +17,7 @@
             </h1>
         </div>
     </div>
-    <div class="row h-50 top-home-img" style="background-image: url({% static 'media/images/woman-sleep.webp' %});">
+    <div class="row h-50 top-home-img" style="background-image: url({% media 'images/woman-sleep.webp' %});">
 
     </div>
     <div class="row h-25 text-center">
