@@ -24,7 +24,7 @@ html {
 }
 
 .top-home-img{
-    background-image: url(/media/images/woman-sleep.webp);
+    background-image: url({% url static '/media/images/woman-sleep.webp' %});
     background-size: cover;
     background-position: right top;
     background-repeat: no-repeat;
