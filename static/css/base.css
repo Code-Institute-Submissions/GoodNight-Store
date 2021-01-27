@@ -24,7 +24,6 @@ html {
 }
 
 .top-home-img {
-    background-image: url(static("media/images/woman-sleep.webp"));
     background-size: cover;
     background-position: right top;
     background-repeat: no-repeat;
@@ -32,7 +31,6 @@ html {
 }
 
 .pillow-img {
-    background-image: url(/media/images/blue-pillows.webp);
     background-position: bottom;
     background-size: cover;
     background-repeat: no-repeat;
@@ -40,7 +38,6 @@ html {
 }
 
 .aroma-section{
-    background-image: url(/media/images/aromatizer-main.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -53,21 +50,18 @@ html {
 }
 
 .pyjama-1 {
-    background-image: url(/media/images/pijama-main-1.jpg);
     background-size: auto 100%;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .pyjama-2 {
-    background-image: url(/media/images/pijama-main-2.jpg);
     background-size: auto 100%;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .pyjama-3 {
-    background-image: url(/media/images/pijama-main-3.jpg);
     background-size: auto 100%;
     background-position: center;
     background-repeat: no-repeat;
