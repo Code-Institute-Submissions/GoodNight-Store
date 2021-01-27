@@ -65,6 +65,7 @@ INSTALLED_APPS = [
 
     #Other
     'crispy_forms',
+    'storages',
 ]
 
 
@@ -199,8 +200,30 @@ MEDIA_ROOT = (
     os.path.join(BASE_DIR, 'media')
 )
 
+# settings for static storage
+
+if 'USE_AWS' in env:
+    # Bucket config
+    AWS_STORAGE_BUCKET_NAME = 'gn-ecommerce'
+    AWS_S3_REGION_NAME = 'eu-central-1'
+    AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+    #Static and medila files
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_LOCATION = 'static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
+
+    #Override static and media URLs in production
+    STATIC_URL = f'httpps://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'httpps://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+
+
 FREE_DELIVERY_THRESHOLD = 50
 STANDARD_DELIVERY_PERCENTAGE = 10
+
 # Stripe
 STRIPE_CURRENCY = 'EUR'
 STRIPE_PUBLIC_KEY = env('STRIPE_PUBLIC_KEY')
