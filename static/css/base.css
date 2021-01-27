@@ -23,11 +23,14 @@ html {
     padding-top: 120px;
 }
 
-.top-home-img {
+#top-section {
     background-size: cover;
-    background-position: right top;
+    background-position: right 20%;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    margin-top: -30px;
+    min-height: 35rem;
+    color: #ffffff;
 }
 
 .pillow-img {

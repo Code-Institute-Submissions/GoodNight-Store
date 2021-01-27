@@ -8,30 +8,23 @@
 
 {% block content %}
 
-
-<div class="container-fluid vh-100 mt-5">
-    <div class="row h-25 my-auto">
-        <div class="col text-center">
-            <h1 class="display-2">
-                All what you need is a good sleep...
-            </h1>
+<section id="top-section" class="pb-5 pt-5" style="background-image: linear-gradient(rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 0.1)), url({% static 'images/woman-sleep.webp' %})">
+    <div class="container-fluid">
+        <div class="row pb-5 pt-5">
+            <div class="col-12 text-center">
+                <h1 class="display-4">All what you need is a good sleep</h1>
+                <h2 class="display-4 mt-5 pb-5 mb-5">Let us take care of the quality of your sleep.</h2>
+                <!-- <div class="col12 text-center"> -->
+                <a class="btn btn-dark text-uppercase py-3" href="{% url 'products' %}">
+                    See our products
+                </a>
+            <!-- </div> -->
+            </div>
         </div>
     </div>
-    <div class="row h-50 top-home-img" style="background-image: url({% static 'images/woman-sleep.webp' %});">
+</section>
 
-    </div>
-    <div class="row h-25 text-center">
-        <div class="col">
-        <h3 class="display-4">
-            Let us take care of the quality of your sleep.
-        </h3>
-        <a class="btn btn-primary text-uppercase py-3" href="{% url 'products' %}">
-            See our products
-        </a>
-    </div>
-    </div>
-</div>
-<div class="container-fluid pb-5 mb-5 vh-my-75">
+<!-- <div class="container-fluid pb-5 mb-5 vh-my-75">
 
     <div class="row h-75 pillow-img" style="background-image: url({% static 'images/blue-pillows.webp' %});">
         
@@ -44,8 +37,8 @@
             </a>
         </div>
     </div>
-</div>
-<div class="container-fluid vh-100 aroma-section" style="background-image: url({% static 'images/aromatizer-main.webp' %});">
+</div> -->
+<!-- <div class="container-fluid vh-100 aroma-section" style="background-image: url({% static 'images/aromatizer-main.webp' %});">
     <div class="row h-25 pt-5 text-center">
         <div class="col-6 offset-6 pb-5 rounded aroma-captions" >
             <h2 class="display-4">Becouse sleep is relaxation</h2>
@@ -59,8 +52,8 @@
         
     </div>
     
-</div>
-<div class="container-fluid vh-100 mb-5">
+</div> -->
+<!-- <div class="container-fluid vh-100 mb-5">
     <div class="row h-25 pt-5 text-center">
         <div class="col pt-5">
             <h2 class="display-4">Good Night pajamas.</h2>
@@ -68,13 +61,13 @@
     </div>
     <div class="row h-50">
         <div class="col d-none d-md-block h-100 pyjama-1" style="background-image: url({% static 'images/pijama-main-1.jpg' %});">
-        <!-- <img src="/media/images/pijama-main-1.jpg" class="d-inline-block"> -->
+     
     </div>
     <div class="col h-100 pyjama-2" style="background-image: url({% static 'images/pijama-main-2.jpg' %});">
-        <!-- <img src="/media/images/pijama-main-2.jpg" class="d-inline-block"> -->
+
     </div>
     <div class="col d-none d-lg-block h-100 pyjama-3" style="background-image: url({% static 'images/pijama-main-3.jpg' %});">
-        <!-- <img src="/media/images/pijama-main-3.jpg" class="d-inline-block"> -->
+
     </div>
     </div>
     <div class="row h-25 pt-5 text-center">
@@ -86,6 +79,6 @@
             </a>
         </div>
     </div>
-</div>
+</div> -->
 
 {% endblock %}

@@ -57,4 +57,5 @@ class ProductReview(models.Model):
         ordering = ['added_on']
 
     def __str__(self):
-        return '{} reviewed this product {} with {} star and comment: {}'.format(self.name, self.added_on, self.rate, self.body)
+        return '{} reviewed this product {} with {} star and comment: {}'.format(
+            self.name, self.added_on, self.rate, self.body)
