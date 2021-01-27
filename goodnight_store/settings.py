@@ -198,10 +198,10 @@ MEDIA_ROOT = (
 if 'USE_AWS' in os.environ:
     # Cache control
     AWS_S3_OBJECT_PARAMETERS = {
-        'Expire': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
         'CacheControl':'max-age=94608000',
     }
-    
+
     # Bucket config
     AWS_STORAGE_BUCKET_NAME = 'gn-ecommerce'
     AWS_S3_REGION_NAME = 'eu-central-1'
