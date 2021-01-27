@@ -15,11 +15,11 @@ import os
 import dj_database_url
 
 # Import environ extension and environ file
-import environ
-env = environ.Env()
+# import environ
+# env = environ.Env()
 
 # Read environ file
-environ.Env.read_env()
+# environ.Env.read_env()
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -35,7 +35,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -137,9 +137,9 @@ WSGI_APPLICATION = 'goodnight_store.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-if 'DATABASE_URL' in env:
+if 'DATABASE_URL' in os.environ:
     DATABASES = {
-        'default': dj_database_url.parse(env('DATABASE_URL'))
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
 else:
     DATABASES = {
@@ -202,12 +202,12 @@ MEDIA_ROOT = (
 
 # settings for static storage
 
-if 'USE_AWS' in env:
+if 'USE_AWS' in os.environ:
     # Bucket config
     AWS_STORAGE_BUCKET_NAME = 'gn-ecommerce'
     AWS_S3_REGION_NAME = 'eu-central-1'
-    AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
-    AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
     #Static and medila files
@@ -226,7 +226,7 @@ STANDARD_DELIVERY_PERCENTAGE = 10
 
 # Stripe
 STRIPE_CURRENCY = 'EUR'
-STRIPE_PUBLIC_KEY = env('STRIPE_PUBLIC_KEY')
-STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY')
-STRIPE_WH_SECRET = env('STRIPE_WH_KEY')
+STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY')
+STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
+STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_KEY')
 DEFAULT_FROM_EMAIL = 'goodnight@example.com'
