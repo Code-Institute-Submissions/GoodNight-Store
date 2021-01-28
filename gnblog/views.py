@@ -26,7 +26,7 @@ def post_detail(request, slug):
 @login_required
 def add_post(request):
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners can do that.')
+        messages.error(request, 'Sorry, only blog admins can do that.')
         return redirect(reverse ('home'))
 
     if request.method == 'POST':
@@ -51,7 +51,7 @@ def add_post(request):
 @login_required
 def edit_post(request, slug):
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners can do that.')
+        messages.error(request, 'Sorry, only blog admins can do that.')
         return redirect(reverse ('home'))
 
     post = get_object_or_404(Post, slug=slug)
@@ -79,7 +79,7 @@ def edit_post(request, slug):
 @login_required
 def remove_post(request, slug):
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners can do that.')
+        messages.error(request, 'Sorry, only blog admins can do that.')
         return redirect(reverse ('home'))
 
     post = get_object_or_404(Post, slug=slug)

@@ -37,7 +37,6 @@ class Product(models.Model):
             rate_dict = all_rates.aggregate(Avg('rate'))
             return round(rate_dict['rate__avg'], 2)
         except Exception as ex:
-            print(ex)
             return 'N/A'
 
     def __str__(self):

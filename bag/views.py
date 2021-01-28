@@ -22,7 +22,7 @@ def add_to_bag(request, item_id):
     bag = request.session.get('bag', {})
 
     if size:
-        if item_id in list(bag.keys()):
+        if item_id in bag.keys():
             if size in bag[item_id]['items_by_size'].keys():
                 bag[item_id]['items_by_size'][size] += quantity
                 messages.success(request, f'Updated size {size.upper()} {product.name} quantity to {bag[item_id]["items_by_size"][size]}')
@@ -33,7 +33,7 @@ def add_to_bag(request, item_id):
             bag[item_id] = {'items_by_size': {size: quantity}}
             messages.success(request, f'Added size {size.upper()} {product.name} to your bag')
     else:
-        if item_id in list(bag.keys()):
+        if item_id in bag.keys():
             bag[item_id] += quantity
             messages.success(request, f'Updated {product.name} quantity to {bag[item_id]}')
         else:
