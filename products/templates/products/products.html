@@ -71,12 +71,12 @@
                         <div class="row no-gutters">
                             <div class="col-12 col-sm-6">
                                 {% if product.image %}
-                            <!-- <a href="{% url 'product_details' product.id %}"> -->
+                           
                                 <img class="img-fluid" style="height:200px;" src="{{ product.image.url }}" alt="{{ product.name }}">
                             
                             {% else %}
                             
-                                <img class="img-fluid" src="{{ MEDIA_URL }}no-image.jpg"
+                                <img class="img-fluid" src="{% static 'images/no-image.jpg' %}"
                                     alt="{{ product.name }}">
                             
                             {% endif %}

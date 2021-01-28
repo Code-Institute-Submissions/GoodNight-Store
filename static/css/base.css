@@ -9,10 +9,6 @@ html {
     text-transform: uppercase;
 }
 
-.vh-my-75 {
-    height: 75vh;
-}
-
 .main-header {
     background-color: #000000;
     white-space: nowrap;
@@ -20,36 +16,40 @@ html {
 }
 
 .empty-container {
-    padding-top: 120px;
+    padding-top: 90px;
 }
 
 #top-section {
     background-size: cover;
-    background-position: 80% -50px;
+    background-position: 78% -100px;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    margin-top: -30px;
-    min-height: 35rem;
+    min-height: calc(100vh - 90px);
     color: #ffffff;
 }
 
-.pillow-img {
-    background-position: bottom;
-    background-size: cover;
-    background-repeat: no-repeat;
-
-}
-
-.aroma-section{
+#middle-section-1 {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /* background-attachment: fixed; */
+    min-height: 35rem;
+    color: #000000;
 }
 
-.aroma-captions {
-    color: #ffffff;
-    background-color: rgba(0, 0, 0, 0.2);
+#middle-section-2 {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 35rem;
+    color: #000000;
+}
+
+#bottom-section {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 35rem;
+    color: #000000;
 }
 
 .pyjama-1 {
@@ -70,6 +70,7 @@ html {
     background-repeat: no-repeat;
 }
 
+/* buttons */
 .btn-black {
     background-color: #000000;
     color: #ffffff;
@@ -149,14 +150,23 @@ html {
     border-radius: 0;
 }
 
+/* blog */
+/* post-detail-page */
+
+.post-detail-container {
+    min-height: 80vh;
+}
 
 @media (max-width:382px) {
     .empty-container {
-        padding-top: 166px;
+        padding-top: 152px;
     }
 }
 @media (max-width:236px) {
     .empty-container {
-        padding-top: 218px;
+        padding-top: 208px;
+    }
+    #top-section {
+        background-position: 78% 0px;
     }
 }
