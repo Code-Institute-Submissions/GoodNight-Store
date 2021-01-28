@@ -8,12 +8,12 @@
 
 {% block content %}
 
-<section id="top-section" class="pt-5" style="background-image: linear-gradient(rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 0)), url({% static 'images/woman-sleep.webp' %})">
+<section id="top-section" class="pt-auto pb-auto" style="background-image: linear-gradient(rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 0)), url({% static 'images/woman-sleep.webp' %})">
     <div class="container-fluid">
-        <div class="row pb-5 pt-3">
+        <div class="row">
             <div class="col-12 text-center">
                 <h1 class="display-4">All what you need is a good sleep</h1>
-                <h2 class="display-4 mt-5 pb-5 mb-5">Let us take care of the quality of your sleep.</h2>
+                <h2 class="display-4 mt-5 pb-5">Let us take care of the quality of your sleep.</h2>
                 <!-- <div class="col12 text-center"> -->
                 <a class="btn btn-dark text-uppercase py-3" href="#middle-section">
                     Discover our products
@@ -33,10 +33,11 @@
         </div>
     </div>
 </section>
-<section id="middle-section-2" style="background-image: url({% static 'images/aromatizer-main.webp' %});">
+<section id="middle-section-2">
     <div class="container-fluid">
         <div class="row">
             <div class="col">
+                <img class="img-fluid" src="{% static 'images/aromatizer-main.webp' %}">
                 <h2 class="display-4 text-center">Becouse sleep is relaxation</h2>
             <h5 class="display-6 text-center">Meet our aromatizer with specially selected oils for various purposes</h5>
             </div>

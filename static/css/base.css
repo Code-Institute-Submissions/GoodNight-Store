@@ -24,8 +24,9 @@ html {
     background-position: 78% -100px;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    min-height: calc(100vh - 90px);
+    min-height: 80vh;
     color: #ffffff;
+    padding-top: 10rem;
 }
 
 #middle-section-1 {
@@ -118,10 +119,6 @@ html {
     height: 2px;
 }
 
-.review-container {
-    height: 300px;
-}
-
 /* Product Form */
 
 .btn-file {
@@ -157,9 +154,13 @@ html {
     min-height: 80vh;
 }
 
-@media (max-width:382px) {
+@media (max-width:376px) {
     .empty-container {
         padding-top: 152px;
+    }
+    #top-section {
+            background-position: 78% -50px;
+        
     }
 }
 @media (max-width:236px) {

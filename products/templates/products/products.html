@@ -64,8 +64,20 @@
             </div>
             <div class="row mt-2 mb-4">
                 {% for product in products %}
-                
+                    
                     <div class="col-12 col-sm-6 col-md-4">
+                        {% if request.user.is_superuser %}
+                    <div class="row">
+                            <div class="col-12 text-right">
+                                
+                                <small class="ml-3">
+                                    <a href="{% url 'edit_product' product.id %}">Edit</a>
+                                    <a class="text-danger ml-3 mr-2" href="{% url 'delete_product' product.id %}">Delete</a>
+                                </small>
+                            
+                            </div>
+                    </div>
+                            {% endif %}
                     <div class="card mb-5 product-card" >
                         <a class="my-main-link" href="{% url 'product_details' product.id %}">
                         <div class="row no-gutters">
@@ -93,42 +105,37 @@
                         </div>
                     </a>
                         <div class="row no-gutters">
-                            <div class="col-12 col-sm-6">
+                            <div class="col-12 text-center">
                                 
                                 {% if product.rating != 'N/A' %}
                                
-                                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} /
-                                    5</small>
+                                <p class="text-muted "><i class="fas fa-star mr-1 text-success"></i>{{ product.rating }}/5
+                                    <small>
+                                        <a href="#">({{ product.review.count }})</a>
+                                    </small>
+                                </p>
                                 {% else %}
                                 <small class="text-muted">No Rating</small>
                                 {% endif %}
                             </div>
-                            <div class="col-12 col-sm-6 text-right">
-                                {% if request.user.is_superuser %}
-                                <small class="ml-3">
-                                    <a href="{% url 'edit_product' product.id %}">Edit</a>
-                                    <a class="text-danger ml-3 mr-2" href="{% url 'delete_product' product.id %}">Delete</a>
-                                </small>
-                            {% endif %}
-                            </div>
-                        </div>
-                        <div class="row no-gutters">
                             
-                            <div class="col-12 mb-1">
+                        </div>
+                        <div class="row no-gutters">    
+                            <div class="col-12 mb-1 text-right">
                                 <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                                     {% csrf_token %}
-                                    
                                 <input class="form-control qty_input d-none" type="hidden"
                                 name="quantity" value="1"
                                 data-item_id="{{ product.id }}"
                                 id="id_qty_{{ product.id }}">
                                 
-                                <input type="submit" class="btn btn-primary rounded-2 text-uppercase mt-2" value="Add to bag now">
+                                <input type="submit" class="btn btn-primary rounded-2 text-uppercase mr-2" value="Add to bag">
                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                 </form>
                             </div>
                         </div>
                     </div>
+                    
                 </div>
                 <!-- {% if forloop.counter|divisibleby:1 %}
                 <div class="col-12 d-sm-none mb-5">
