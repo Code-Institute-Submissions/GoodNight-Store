@@ -15,7 +15,7 @@
                 <h1 class="display-4" data-aos="zoom-in-left">All what you need is a good sleep</h1>
                 <h2 class="display-4 mt-5 pb-5" data-aos="zoom-in-right">Let us take care of the quality of your sleep.</h2>
 
-                <a class="btn btn-dark text-uppercase py-3" href="#middle-section" data-aos="zoom-out">
+                <a class="btn btn-dark text-uppercase py-3" href="{% url 'products' %}" data-aos="zoom-out">
                     Discover our products
                 </a>
 
@@ -43,7 +43,7 @@
             <div class="col aroma-captions text-center">
                 <h4 class="display-3" data-aos="zoom-in-left">Becouse sleep is relaxation</h2>
                 <h6 class="display-4" data-aos="zoom-in-left">Meet our aromatizer with specially selected oils for various purposes</h5>
-                <a class="btn btn-dark text-uppercase py-3 mt-5" href="#middle-section" data-aos="zoom-in-left">
+                <a class="btn btn-dark text-uppercase py-3 mt-5" href="{% url 'products' %}?category=aromatherapy" data-aos="zoom-in-left">
                     Go to aromatherapy 
                 </a>
             </div>
@@ -80,5 +80,15 @@
     AOS.init({
         duration: 2500,
     });
+    var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("main-header").style.top = "0";
+  } else {
+    document.getElementById("main-header").style.top = "-100px";
+  }
+  prevScrollpos = currentScrollPos;
+}
   </script>
 {% endblock %}

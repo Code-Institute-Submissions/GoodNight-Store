@@ -10,10 +10,11 @@ html {
     text-transform: uppercase;
 }
 
-.main-header {
+#main-header {
     background-color: #000000;
     white-space: nowrap;
     z-index: 100;
+    transition: top 0.3s;
 }
 
 .empty-container {
@@ -21,6 +22,7 @@ html {
 }
 
 #top-section {
+    margin-top: -90px;
     background-size: cover;
     background-position: 78% -100px;
     background-repeat: no-repeat;
