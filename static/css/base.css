@@ -1,5 +1,6 @@
 html {
     height: 100%;
+    scroll-behavior: smooth;
 }
 
 .logo-caption {
@@ -29,47 +30,33 @@ html {
     padding-top: 10rem;
 }
 
-#middle-section-1 {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 35rem;
-    color: #000000;
-}
-
 #middle-section-2 {
     background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
-    min-height: 35rem;
-    color: #000000;
+    background-attachment: fixed;
+    background-position: bottom left;
+    min-height: 80vh;
 }
 
-#bottom-section {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 35rem;
-    color: #000000;
+/* .item {
+    margin: 50px auto;
+    padding-top: 75px;
+    background: #ccc;
+    text-align: center;
+    color: #FFF;
+    font-size: 3em;
+  } */
+
+.aroma-captions {
+    padding: 5rem;
+    background-color: rgba(0,0,0,0.3);
+    color: #ffffff;
 }
 
-.pyjama-1 {
-    background-size: auto 100%;
-    background-position: center;
-    background-repeat: no-repeat;
+.img-pyjama {
+    max-height: 30rem;
 }
 
-.pyjama-2 {
-    background-size: auto 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.pyjama-3 {
-    background-size: auto 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-}
 
 /* buttons */
 .btn-black {
@@ -155,6 +142,9 @@ html {
 }
 
 @media (max-width:376px) {
+    section h1, h2, h5, h3, h4, h5, h6 {
+        font-size: 10px;
+    }
     .empty-container {
         padding-top: 152px;
     }
@@ -163,7 +153,7 @@ html {
         
     }
 }
-@media (max-width:236px) {
+@media (max-width:234px) {
     .empty-container {
         padding-top: 208px;
     }
@@ -171,3 +161,5 @@ html {
         background-position: 78% 0px;
     }
 }
+
+@media (max-width: )

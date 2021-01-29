@@ -8,67 +8,72 @@
 
 {% block content %}
 
-<section id="top-section" class="pt-auto pb-auto" style="background-image: linear-gradient(rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 0)), url({% static 'images/woman-sleep.webp' %})">
+<section id="top-section" class="mb-5" style="background-image: linear-gradient(rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 0)), url({% static 'images/woman-sleep-min.jpg' %})">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 text-center">
-                <h1 class="display-4">All what you need is a good sleep</h1>
-                <h2 class="display-4 mt-5 pb-5">Let us take care of the quality of your sleep.</h2>
+            <div class="col-12 text-center item">
+                <h1 class="display-4" data-aos="zoom-in-left">All what you need is a good sleep</h1>
+                <h2 class="display-4 mt-5 pb-5" data-aos="zoom-in-right">Let us take care of the quality of your sleep.</h2>
                 <!-- <div class="col12 text-center"> -->
-                <a class="btn btn-dark text-uppercase py-3" href="#middle-section">
+                <a class="btn btn-dark text-uppercase py-3" href="#middle-section" data-aos="zoom-out">
                     Discover our products
                 </a>
             <!-- </div> -->
             </div>
+            
         </div>
     </div>
 </section>
-<section id="middle-section-1">
-    <div class="container-fluid mb-5">
-        <div class="row">
-            <div class="col">
-                <img class="img-fluid" src="{% static 'images/blue-pillows.webp' %}">
-                <h5 class="display-4">Soft and comfortable pillows - perfect choice for sleep lovers</h5>
-            </div>
-        </div>
-    </div>
-</section>
-<section id="middle-section-2">
+<section id="middle-section-1" class="mb-5" >
     <div class="container-fluid">
         <div class="row">
-            <div class="col">
-                <img class="img-fluid" src="{% static 'images/aromatizer-main.webp' %}">
-                <h2 class="display-4 text-center">Becouse sleep is relaxation</h2>
-            <h5 class="display-6 text-center">Meet our aromatizer with specially selected oils for various purposes</h5>
+            <div class="col-12">
+                <img class="img-fluid" src="{% static 'images/blue-pillows-min.jpg' %}">
+            </div>
+            <div class="col-12">
+                <h5 class="display-4 text-center">Soft and comfortable pillows - perfect choice for sleep lovers</h5>
             </div>
         </div>
     </div>
 </section>
-<section id="bottom-section">
+<section id="middle-section-2" class="mb-5" style="background-image: url({% static 'images/aromatizer-main.jpg' %});">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- <div class="col p-0">
+                <img class="img-fluid" src="{% static 'images/aromatizer-main.jpg' %}">
+                
+            </div> -->
+            <div class="col aroma-captions text-center">
+                <h4 class="display-3" data-aos="zoom-in-left">Becouse sleep is relaxation</h2>
+                <h6 class="display-4" data-aos="zoom-in-left">Meet our aromatizer with specially selected oils for various purposes</h5>
+                <a class="btn btn-dark text-uppercase py-3 mt-5" href="#middle-section" data-aos="zoom-in-left">
+                    Go to aromatherapy 
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="bottom-section" class="mb-5">
             <div class="container-fluid mb-5">
-                <div class="row h-25 pt-5 text-center">
-                    <div class="col pt-5">
+                <div class="row text-center">
+                    <div class="col">
                         <h2 class="display-4">Good Night pajamas.</h2>
                     </div>
                 </div>
-                <div class="row h-50">
-                    <div class="col d-none d-md-block h-100 pyjama-1">
-                 <img class="img-fluid" src="{% static 'images/pijama-main-1.jpg' %}">
+                <div class="row">
+                    <div class="col d-none d-md-block text-center pyjama-1">
+                 <img class="img-fluid img-pyjama" src="{% static 'images/pijama-main-1.jpg' %}" data-aos="fade-left">
                 </div>
-                <div class="col h-100 pyjama-2">
-                    <img class="img-fluid" src="{% static 'images/pijama-main-2.jpg' %}">
+                <div class="col text-center pyjama-2">
+                    <img class="img-fluid img-pyjama" src="{% static 'images/pijama-main-2.jpg' %}" data-aos="flip-up">
                 </div>
-                <div class="col d-none d-lg-block h-100 pyjama-3">
-                    <img class="img-fluid" src="{% static 'images/pijama-main-3.jpg' %}">
+                <div class="col d-none d-lg-block text-center pyjama-3">
+                    <img class="img-fluid img-pyjama" src="{% static 'images/pijama-main-3.jpg' %}" data-aos="fade-right">
                 </div>
                 </div>
-                <div class="row h-25 pt-5 text-center">
+                <div class="row text-center">
                     <div class="col">
-                        <h5 class="display-6">When the comfort meet fashion... Nice, but most of all comfortable and pleasant to the touch.</h5>
-                        
-                        <a class="btn btn-primary text-uppercase py-3" href="{% url 'products' %}?category=pyjamas">
-                            Buy now
-                        </a>
+                        <h5 class="display-4">When the comfort meet fashion... Nice, but most of all comfortable and pleasant to the touch.</h5>
                     </div>
                 </div>
             </div>
@@ -130,5 +135,9 @@
         </div>
     </div>
 </div> -->
-
+<script>
+    AOS.init({
+        duration: 2500,
+    });
+  </script>
 {% endblock %}
