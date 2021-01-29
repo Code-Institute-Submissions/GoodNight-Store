@@ -6,11 +6,12 @@
             <div class="col-12 ">
                 <h3 class="display-4 text-center">Product reviews</h3>
             </div>
-            <div class="col-12 col-sm-6">
-            <div id="review-carousel" class="carousel slide carousel mt-sm-5 pt-sm-2" data-ride="carousel">
-
-                <div class="carousel-inner">
+            <div class="col-12 col-sm-6 mt-sm-5 pt-sm-4">
+            
                     {% if reviews %}
+                    <div id="review-carousel" class="carousel slide carousel " data-ride="carousel">
+
+                        <div class="carousel-inner">
                         {% for review in reviews %}
                             {% if forloop.counter == 1 %}
                                 <div class="carousel-item active" data-interval="4000">
@@ -47,11 +48,24 @@
                                 </div>
                             {% endif %}
                         {% endfor %}
-                    
+                    </div>
+                    <a class="carousel-control-prev" href="#review-carousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a class="carousel-control-next" href="#review-carousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                      </a>
+            </div>
+            <div class="mt-5 text-center">
+                <a class="btn-primary p-2" href="#">See all reviews</a>
+                </div>
             
+        
                     {% else %}
-                    
-                        <div class="carousel-item active">
+                        
+                        <div class="">
                             <div class="card text-white bg-dark">
                                 <div class="card-header">
                                     Product has no reviews yet
@@ -61,26 +75,16 @@
                                     
                                 </div>
                                 <div class="card-footer">
-                                    <btn>Add review</btn>
+                                    
                                 </div>
                             </div>
+                        
                         </div>
                     {% endif %}
+                
                     
-                </div>
-                <a class="carousel-control-prev" href="#review-carousel" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                  </a>
-                  <a class="carousel-control-next" href="#review-carousel" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                  </a>
-            </div>
-            <div class="mt-5 text-center">
-            <a class="btn-primary p-2" href="#">See all reviews</a>
-        </div>
-            </div>
+                    </div>
+                    
             <div class="col-12 col-sm-6 mt-3 mt-sm-0">
                 <form method="POST" action="{%url 'product_details' product.id %}" class="form mb-5">
                     {% csrf_token %}

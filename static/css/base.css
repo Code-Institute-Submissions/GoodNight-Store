@@ -28,7 +28,7 @@ html {
     background-position: 78% -100px;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    min-height: 80vh;
+    min-height: calc(80vh + 90px);
     color: #ffffff;
     padding-top: 10rem;
 }
