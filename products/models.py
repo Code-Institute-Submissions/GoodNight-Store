@@ -47,9 +47,9 @@ class ProductReview(models.Model):
     product = models.ForeignKey('Product', on_delete=models.CASCADE, related_name='review')
     name = models.CharField(max_length=100)
     email = models.EmailField()
-    body = models.TextField()
+    body = models.CharField(max_length=512)
     added_on = models.DateTimeField(auto_now=True)
-    rate = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(5)])
+    rate = models.DecimalField(max_digits=1, decimal_places=0, validators=[MinValueValidator(0), MaxValueValidator(5)])
     active = models.BooleanField(default=True)
 
     class Meta:

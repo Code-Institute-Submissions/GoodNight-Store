@@ -74,6 +74,10 @@ def product_details(request, product_id):
             new_review = review_form.save(commit=False)
             new_review.product = product
             new_review.save()
+            messages.success(request, 'Thank you! Succesfully added review!')
+            return redirect(reverse('product_details', args=[product.id]))
+        else:
+            messages.error(request, 'Failed to add review. Please ensure the form is valid')
     else:
         review_form = ProductReviewForm()
 
@@ -151,3 +155,4 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Produc deleted!')
     return redirect(reverse('products'))
+

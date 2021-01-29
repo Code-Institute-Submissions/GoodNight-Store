@@ -121,76 +121,9 @@
         </div>
         <hr>
     </div>
-    </section>
-    <section id="product-reviews">
-        <div class="container">
-            
-            <div class="row text-center">
-                
-                <div class="col-12 ">
-                    <h3 class="display-4 text-center">Product reviews</h3>
-                <div id="review-carousel" class="carousel slide carousel-fade" data-ride="carousel">
-                    <div class="carousel-inner">
-                        {% if reviews %}
-                            {% for review in reviews %}
-                                {% if forloop.counter == 1 %}
-                                    <div class="carousel-item active" data-interval="4000">
-                            <div class="card">
-                                <div class="card-header">
-                                    Our customers says:
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title"><i class="fas fa-star mr-1 text-success text-left">{{ review.rate }}</i></h5>
-                                    <p class="card-text">{{ review.body }}</p>
-                                </div>
-                                <div class="card-footer">
-                                    <p class="text-left text-muted d-inline mr-3">{{ review.added_on }}</p>
-                                        <p class=" text-muted d-inline p-5">{{ review.name }}</p>
-                                </div>
-                            </div>
-                                    </div>
-                                {% else %}
-                                    <div class="carousel-item" data-interval="4000">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                Our customers says:
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title"><i class="fas fa-star mr-1 text-success text-left">{{ review.rate }}</i></h5>
-                                                <p class="card-text">{{ review.body }}</p>
-                                            </div>
-                                            <div class="card-footer">
-                                                <p class="text-left text-muted d-inline mr-3">{{ review.added_on }}</p>
-                                                <p class=" text-muted d-inline p-5">{{ review.name }}</p>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                {% endif %}
-                            {% endfor %}
-                        {% else %}
-                            <div class="carousel-item active">
-                                <div class="card">
-                                    <div class="card-header">
-                                        Product has no reviews yet
-                                    </div>
-                                    <div class="card-body">
-                                        Be the first who reviewed it.
-                                        
-                                    </div>
-                                    <div class="card-footer">
-                                        <btn>Add review</btn>
-                                    </div>
-                                </div>
-                            </div>
-                        {% endif %}
-                        
-                    </div>
-                </div>
-            </div>          
-        </div>
-    </div>
-    </section>
+</section>
+    {% include "products/product_review.html" %}
+    
     
 {% endblock %}
 
