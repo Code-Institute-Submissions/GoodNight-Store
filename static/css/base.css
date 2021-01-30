@@ -36,7 +36,7 @@ h1, h2, h3, h4, h5, h6 {
     background-attachment: fixed;
     min-height: calc(80vh + 90px);
     color: #ffffff;
-    padding-top: 10rem;
+    padding-top: 8rem;
 }
 /* middle-section-1 - pillows */
 .my-overflow {
