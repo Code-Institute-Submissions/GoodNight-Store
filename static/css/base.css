@@ -1,5 +1,6 @@
 html {
     height: 100%;
+    font-size: 1.2rem
 }
 
 .logo-caption {
@@ -7,6 +8,12 @@ html {
     /* color: #FFD700; */
     font-family: 'Exo 2', sans-serif;
     text-transform: uppercase;
+}
+body {
+    font-family: 'DM Sans', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Assistant', sans-serif;
 }
 
 #main-header {
@@ -18,7 +25,7 @@ html {
 }
 
 .empty-container {
-    padding-top: 90px;
+    padding-top: 123px;
 }
 
 #top-section {
@@ -83,11 +90,7 @@ html {
     color: #000000;
 }
 
-.product-card:hover {
-    color: #000000;
-    text-decoration: none;
-    border: 1px solid #000000;
-}
+
 .my-main-link:hover {
     color: #000000;
     text-decoration: none;
@@ -107,6 +110,26 @@ html {
 
 .toast-capper {
     height: 2px;
+}
+
+/* product page */
+
+.product-image {
+    float: left;
+    margin-right: 1.5rem;
+    max-height: 200px;
+    max-width:50%;
+}
+
+.product-card {
+    /* height: 15rem; */
+}
+
+.product-card:hover {
+    color: #000000;
+    text-decoration: none;
+    border: 1px solid #000000;
+    
 }
 
 /* product detail */
@@ -150,11 +173,16 @@ html {
     min-height: 80vh;
 }
 
+@media (max-width:765px) {
+    .empty-container {
+        padding-top: 180px;
+    }
+    #top-section {
+        background-position: 78% 0px;
+    }
+}
 
 @media (max-width:376px) {
-    .empty-container {
-        padding-top: 152px;
-    }
     #top-section {
         background-position: 78% -50px;
     }
@@ -163,8 +191,8 @@ html {
     }
 }
 @media (max-width:234px) {
-    .empty-container {
-        padding-top: 208px;
+    .logo-caption {
+        display: none;
     }
     #top-section {
         background-position: 78% 0px;

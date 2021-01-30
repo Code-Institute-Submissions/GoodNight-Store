@@ -16,6 +16,8 @@
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <!-- Google font EXO -->
   <link href="https://fonts.googleapis.com/css2?family=Exo+2&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300&family=DM+Sans&display=swap" rel="stylesheet">
   <!-- Own CSS style -->
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -48,7 +50,7 @@
 <body>
   <header class="container-fluid position-fixed top-0 main-header" id="main-header">
     <div class="row pt-3 pb-2">
-      <div class="col col-md-4">
+      <div class="col-6 col-md-4">
         <nav class="navbar navbar-expand-sm navbar-dark bg-transparent">
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
             aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,14 +62,14 @@
 
       </div>
       <!-- logo caption -->
-      <div class="col d-md-none text-center">
+      <div class="col-6 d-md-none text-center">
         <a href="{% url 'home' %}" class="nav-link">
-          <h1 class="display-6 logo-caption"><strong>GN</strong></h1>
+          <h1 class="logo-caption"><strong>GN</strong></h1>
         </a>
       </div>
       <div class="col col-md-4 d-none d-md-block text-center">
         <a href="{% url 'home' %}" class="nav-link">
-          <h1 class="display-6 logo-caption"><strong>Good Night</strong></h1>
+          <h1 class="logo-caption"><strong>Good Night</strong></h1>
         </a>
       </div>
       <!-- bag and account menu -->
@@ -89,7 +91,7 @@
             </a>
           </li>
           <li class="list-inline-item dropdown">
-            <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
+            <a class="nav-link pl-0 pr-0" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
               aria-expanded="false">
               <div class="text-center">
                 <div><i class="fas fa-user fa-lg"></i></div>
