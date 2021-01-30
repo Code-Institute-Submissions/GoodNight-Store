@@ -59,7 +59,7 @@
                       </a>
             </div>
             <div class="mt-5 text-center">
-                <a class="btn-primary p-2" href="#">See all reviews</a>
+                <a class="btn btn-primary" href="#">See all reviews</a>
                 </div>
             
         
@@ -89,7 +89,7 @@
                 <form method="POST" action="{%url 'product_details' product.id %}" class="form mb-5">
                     {% csrf_token %}
                     {{ review_form|crispy }}
-                    <button class="btn btn-black rounded-0" type="submit">Add Review</button>
+                    <button class="btn btn-black" type="submit">Add Review</button>
                 </form>  
             </div>
         </div>          

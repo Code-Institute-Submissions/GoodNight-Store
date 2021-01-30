@@ -49,15 +49,6 @@ html {
     min-height: 80vh;
 }
 
-/* .item {
-    margin: 50px auto;
-    padding-top: 75px;
-    background: #ccc;
-    text-align: center;
-    color: #FFF;
-    font-size: 3em;
-  } */
-
 .aroma-captions {
     padding-top: 5rem;
     padding-bottom: 5rem;
@@ -117,6 +108,12 @@ html {
 .toast-capper {
     height: 2px;
 }
+
+/* product detail */
+.form-adjust-qty {
+    margin-left: calc(50% - 5rem);
+}
+
 
 /* Product Form */
 

@@ -1,30 +1,25 @@
 {% extends "base.html" %}
 {% load static %}
 
-
 {% block page_header %}
-    
 {% endblock %}
 
 {% block content %}
-
-<section id="top-section" class="mb-5" style="background-image: linear-gradient(rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 0)), url({% static 'images/woman-sleep-min.jpg' %})">
+<section id="top-section" class="mb-5"
+    style="background-image: linear-gradient(rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 0)), url({% static 'images/woman-sleep-min.jpg' %})">
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 text-center item">
                 <h1 class="mt-lg-5 pt-xl-1" data-aos="zoom-in">All what you need is a good sleep</h1>
                 <h2 class=" mt-5 pb-5" data-aos="zoom-in-right">Let us take care of the quality of your sleep.</h2>
-
                 <a class="btn btn-dark text-uppercase py-3" href="{% url 'products' %}" data-aos="zoom-out">
                     Discover our products
                 </a>
-
             </div>
-            
         </div>
     </div>
 </section>
-<section id="middle-section-1" class="mb-5" >
+<section id="middle-section-1" class="mb-5">
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 text-center my-overflow">
@@ -42,56 +37,59 @@
 
             <div class="col aroma-captions text-center">
                 <h2 class="" data-aos="zoom-in-right">Becouse sleep is relaxation</h2>
-                <h2 class="" data-aos="zoom-in">Meet our aromatizer with specially selected oils for various purposes</h5>
-                <a class="btn btn-dark text-uppercase py-3 mt-5" href="{% url 'products' %}?category=aromatherapy" data-aos="zoom-in">
-                    Go to aromatherapy 
-                </a>
+                <h2 class="" data-aos="zoom-in">Meet our aromatizer with specially selected oils for various purposes
+                    </h5>
+                    <a class="btn btn-dark text-uppercase py-3 mt-5" href="{% url 'products' %}?category=aromatherapy"
+                        data-aos="zoom-in">
+                        Go to aromatherapy
+                    </a>
             </div>
         </div>
     </div>
 </section>
 <section id="bottom-section" class="mb-5">
-            <div class="container-fluid mb-5">
-                <div class="row text-center">
-                    <div class="col">
-                        <h2 class="">Good Night pajamas.</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col d-none d-md-block text-center pyjama-1">
-                 <img class="img-fluid img-pyjama" src="{% static 'images/pijama-main-3.jpg' %}" data-aos="fade-left">
-                </div>
-                <div class="col text-center pyjama-2">
-                    <img class="img-fluid img-pyjama" src="{% static 'images/pijama-main-1.jpg' %}" data-aos="flip-up">
-                </div>
-                <div class="col d-none d-lg-block text-center pyjama-3">
-                    <img class="img-fluid img-pyjama" src="{% static 'images/pijama-main-2.jpg' %}" data-aos="fade-right">
-                </div>
-                </div>
-                <div class="row text-center">
-                    <div class="col">
-                        <h2 class="">When the comfort meet fashion... Nice, but most of all comfortable and pleasant to the touch.</h5>
-                    </div>
-                </div>
+    <div class="container-fluid mb-5">
+        <div class="row text-center">
+            <div class="col">
+                <h2 class="">Good Night pajamas.</h2>
             </div>
-
+        </div>
+        <div class="row">
+            <div class="col d-none d-md-block text-center pyjama-1">
+                <img class="img-fluid img-pyjama" src="{% static 'images/pijama-main-3.jpg' %}" data-aos="fade-left">
+            </div>
+            <div class="col text-center pyjama-2">
+                <img class="img-fluid img-pyjama" src="{% static 'images/pijama-main-1.jpg' %}" data-aos="flip-up">
+            </div>
+            <div class="col d-none d-lg-block text-center pyjama-3">
+                <img class="img-fluid img-pyjama" src="{% static 'images/pijama-main-2.jpg' %}" data-aos="fade-right">
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col">
+                <h2 class="">When the comfort meet fashion... Nice, but most of all comfortable and pleasant to the
+                    touch.</h5>
+            </div>
+        </div>
+    </div>
 </section>
 <script>
+    // AOS - animate on scroll - source: https://michalsnik.github.io/aos/
     AOS.init({
         duration: 2500,
     });
-    
-    if (screen.width > 576){
+    // hide menu on scroll down in home page
+    if (screen.width > 576) {
         var prevScrollpos = window.pageYOffset;
-        window.onscroll = function() {
-        var currentScrollPos = window.pageYOffset;
+        window.onscroll = function () {
+            var currentScrollPos = window.pageYOffset;
             if (prevScrollpos > currentScrollPos) {
                 document.getElementById("main-header").style.top = "0";
             } else {
                 document.getElementById("main-header").style.top = "-100px";
             }
-        prevScrollpos = currentScrollPos;
-    }   
+            prevScrollpos = currentScrollPos;
+        }
     }
-  </script>
+</script>
 {% endblock %}
