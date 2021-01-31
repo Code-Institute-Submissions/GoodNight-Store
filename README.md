@@ -128,6 +128,22 @@ The other technologies are listed below:
 # Deployment
 
 Repository is deploed in github. Live service is deployed on the heroku.com. Static files are stored in the AWS S3 free service.
+To deploy this service i did follow bellow steps:
+
+1.  Create app in heroku.
+2.  In resources tab in heroku added Heroku free postgress database.
+3.  Set environmental variables in heroku.
+4.  Connect to the heroku database, by changing the DATABASE settings.
+5.  Make migrations to the new database.
+6.  Created the AWS account.
+7.  Created the S3 bucket in AWS account.
+8.  Added the policy in S3.
+9.  Added user group and user in S3.
+10. Save keys from S3 to the heroku variables configuration.
+11. Create heroku repository.
+12. Created Procfile.
+13. Push repository to the heroku.
+14. Test application in heroku service.
 
 ## To run this project locally, please follow below steps:
 
@@ -144,6 +160,10 @@ Before running the project locally you need to have installed python and Django,
     *   STRIPE_PUBLIC_KEY
     *   STRIPE_SECRET_KEY
     *   STRIPE_WH_KEY
+    For email usage the below variables needs to be set in .env file:
+    *   EMAIL_HOST_PASS
+    *   EMAIL_HOST_USER
+    Email is confirued for gmail, in case to use other email provider, please check the EMAIL_HOST in settings.py file.
 6. Make migrations by typing in termianl 'python manage.py migrations --show' to display all migrations and 'python manage.py migrate' - to make all migrations, be sure that you are in terminal in the folder where manage.py file is
 7. Run the server by typing 'python manage.py runserver'
 8. Create a superuser to open admin service page by typing 'python manage.py createsuperuser' and follow the instructions in terminal.
