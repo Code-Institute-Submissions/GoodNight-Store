@@ -172,7 +172,8 @@ Before running the project locally you need to have installed python and Django,
 
 ## Content:
 
-I used https://github.com/ckz8780/boutique_ado_v1/ as guidance especially for bag and checkout applications, partly for product and toast messages.
+I used https://github.com/ckz8780/boutique_ado_v1/ as guidance.
+For application like bag, checkout and profile i used the code from https://github.com/ckz8780/boutique_ado_v1/.
 
 Text for blog is taken from http://healthysleep.med.harvard.edu/healthy/getting/overcoming/tips
 
