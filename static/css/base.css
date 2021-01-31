@@ -169,6 +169,10 @@ h1, h2, h3, h4, h5, h6 {
 /* blog */
 /* post-detail-page */
 
+.my-img-blog {
+    max-height: 25rem;
+}
+
 .post-detail-container {
     min-height: 80vh;
 }

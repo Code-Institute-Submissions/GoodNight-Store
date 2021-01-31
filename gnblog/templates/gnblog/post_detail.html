@@ -9,14 +9,12 @@
 <section>
     <div class="container mt-5 mb-5 post-detail-container">
         <div class="row">
-            <div class="col-12 col-md-6 mb-3">
+            <div class="col-12">
                 {% if post.image %}
-                <img class="img-fluid" src="{{ post.image.url }}" alt="{{ post.title }}">
+                <img class="img-fluid my-img-blog" src="{{ post.image.url }}" alt="{{ post.title }}">
                 {% else %}
-                <img class="img-fluid" src="{% static 'images/no-image.jpg' %}" alt="{{ post.title }}">
+                <img class="img-fluid my-img-blog" src="{% static 'images/no-image.jpg' %}" alt="{{ post.title }}">
                 {% endif %}
-            </div>
-            <div class="col-12 col-md-6">
                 <h2 class="text-center">{{ post.title }}</h2>
                 <h3 class="text-muted text-center mt-1">{{ post.subtitle }}</h4>
                 <p class="mt-3 mb-3 text-justify">{{ post.body }}</p>

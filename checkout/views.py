@@ -4,6 +4,8 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpR
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
 
 import stripe
 
@@ -14,6 +16,8 @@ from bag.context import bag_contents
 
 from .forms import OrderForm
 from .models import Order, OrderLineItem
+
+""" <!-- coude source https://github.com/ckz8780/boutique_ado_v1 --> """
 
 
 @require_POST
@@ -165,10 +169,29 @@ def checkout_success(request, order_number):
             if user_profile_form.is_valid():
                 user_profile_form.save()
 
-
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \
         email will be sent to {order.email}.')
+
+    recipient_email = order.email,
+    email_body = render_to_string(
+        'checkout/confirmation_emails/confirmation_email_body.txt',
+        {'order': order,
+         'contact_email': settings.DEFAULT_FROM_EMAIL}
+        )
+    meil_subject = render_to_string(
+        'checkout/confirmation_emails/confirmation_emails_subject.txt',
+        {'order': order}
+        )
+    try:
+        send_mail(
+            meil_subject,
+            email_body,
+            settings.DEFAULT_FROM_EMAIL,
+            recipient_email,
+            )
+    except Exception as ex:
+        print(ex)
 
     if 'bag' in request.session:
         del request.session['bag']

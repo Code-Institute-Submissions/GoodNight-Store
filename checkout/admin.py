@@ -1,6 +1,8 @@
 from django.contrib import admin
 from .models import Order, OrderLineItem
 
+"""<!-- coude source https://github.com/ckz8780/boutique_ado_v1 -->"""
+
 
 class OrderLineItemAdminInline(admin.TabularInline):
     model = OrderLineItem

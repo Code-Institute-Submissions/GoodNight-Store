@@ -11,14 +11,16 @@
     <div class="row">
         <div class="col-12">
             
-            <h2 class="display-4 text-center">From sleeplovers for sleeplovers</h2>
+            <h1 class="text-center">From sleeplovers for sleeplovers</h2>
             <h3 class="text-muted text-center">Make your sleep better with our advices.</h3>
             <hr class="mb-5">
         </div>
     </div> 
     <div class="row row-cols-1 row-cols-md-2">
     {% for post in post %}
+    
         <div class="col-12 mb-4">
+            
             <div class="card">
                 {% if post.image %}
                 <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}">
@@ -26,14 +28,15 @@
                 <img src="{{ MEDIA_URL }}no-image.jpg" class="card-img-top" alt="{{ post.title }}">
                 {% endif %}
                 <div class="card-body">
+                    <a href="{% url 'post_detail' post.slug %}">
                 <h5 class="card-title">{{ post.title }}</h5>
+            </a>
+            {% if post.subtitle %}
                 <h6 class="card-subtitle">{{ post.subtitle }}</h6>
-                <p class="card-text">{{ post.body }}</p>
+                {% endif %}
                 <div class="row">
-                    <div class="col-6">
-                <a href="{% url 'post_detail' post.slug %}" class="btn btn-primary">Read more</a>
-            </div>
-            <div class="col-6 text-right">
+                  
+            <div class="col-6 offset-6 text-right">
                 {% if request.user.is_superuser %}
                 <small>
                     <a href="{% url 'edit_post' post.slug %}">Edit</a>
@@ -44,6 +47,7 @@
             </div>
                 </div>
             </div>
+        
         </div>
     {% endfor %}
 </div>

@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import BlogPostForm
 
+
 def blog(request):
     """ A view to render gnblog.html template """
     post = Post.objects.order_by('-created')
@@ -12,6 +13,7 @@ def blog(request):
     }
 
     return render(request, 'gnblog/blog.html', context)
+
 
 def post_detail(request, slug):
     post = get_object_or_404(Post, slug=slug)
@@ -27,7 +29,7 @@ def post_detail(request, slug):
 def add_post(request):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only blog admins can do that.')
-        return redirect(reverse ('home'))
+        return redirect(reverse('home'))
 
     if request.method == 'POST':
         form = BlogPostForm(request.POST, request.FILES)
@@ -36,7 +38,9 @@ def add_post(request):
             messages.success(request, 'Succesfully added Post!')
             return redirect(reverse('blog'))
         else:
-            messages.error(request, 'Failed to add post. Please ensure the form is valid')
+            messages.error(
+                request, 'Failed to add post. Please ensure the form is valid'
+                )
     else:
         form = BlogPostForm()
 
@@ -52,7 +56,7 @@ def add_post(request):
 def edit_post(request, slug):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only blog admins can do that.')
-        return redirect(reverse ('home'))
+        return redirect(reverse('home'))
 
     post = get_object_or_404(Post, slug=slug)
     if request.method == 'POST':
@@ -62,7 +66,10 @@ def edit_post(request, slug):
             messages.success(request, 'Succesfully updated post!')
             return redirect(reverse('post_detail', args=[post.slug]))
         else:
-            messages.error(request, 'Failed to update post. Please ensure the form is valid')
+            messages.error(
+                request,
+                'Failed to update post. Please ensure the form is valid'
+                )
     else:
         form = BlogPostForm(instance=post)
         messages.info(request, f'You are editing {post.title} post')
@@ -80,7 +87,7 @@ def edit_post(request, slug):
 def remove_post(request, slug):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only blog admins can do that.')
-        return redirect(reverse ('home'))
+        return redirect(reverse('home'))
 
     post = get_object_or_404(Post, slug=slug)
     post.delete()

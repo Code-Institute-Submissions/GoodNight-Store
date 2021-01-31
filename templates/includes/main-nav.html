@@ -1,23 +1,22 @@
 <div class="collapse navbar-collapse" id="main-nav">
-    <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{% url 'blog' %}">Blog</a>
+  <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="{% url 'blog' %}">Blog</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="store-menu" role="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="true">
+        Store
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="store-menu">
+        <li><a class="dropdown-item" href="{% url 'products' %}">All products</a></li>
+        <li>
+          <hr class="dropdown-divider">
         </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="store-menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              Store
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="store-menu">
-              <li><a class="dropdown-item" href="{% url 'products' %}">All products</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="{% url 'products' %}?category=aromatherapy">Aromatherapy</a></li>
-              <li><a class="dropdown-item " href="{% url 'products' %}?category=pillows">Pillows</a></li>
-              <li><a class="dropdown-item " href="{% url 'products' %}?category=pyjamas">Pyjamas</a></li>
-            </ul>
-          </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">About us</a>
-          </li> -->
-   
-    </ul>
+        <li><a class="dropdown-item" href="{% url 'products' %}?category=aromatherapy">Aromatherapy</a></li>
+        <li><a class="dropdown-item " href="{% url 'products' %}?category=pillows">Pillows</a></li>
+        <li><a class="dropdown-item " href="{% url 'products' %}?category=pyjamas">Pyjamas</a></li>
+      </ul>
+    </li>
+  </ul>
 </div>

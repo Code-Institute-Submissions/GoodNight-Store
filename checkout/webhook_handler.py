@@ -10,6 +10,9 @@ from profiles.models import UserProfile
 import json
 import time
 
+""" <!-- coude source https://github.com/ckz8780/boutique_ado_v1 --> """
+
+
 class StripeWH_Handler:
     """Handle Stripe webhooks"""
 
@@ -30,7 +33,7 @@ class StripeWH_Handler:
             body,
             settings.DEFAULT_FROM_EMAIL,
             [cust_email]
-        )        
+        )
 
     def handle_event(self, event):
         """

@@ -152,7 +152,9 @@ Before running the project locally you need to have installed python and Django,
 
 ## Content:
 
-I used https://github.com/ckz8780/boutique_ado_v1/ as guidance especially for bag and checkout applications.
+I used https://github.com/ckz8780/boutique_ado_v1/ as guidance especially for bag and checkout applications, partly for product and toast messages.
+
+Text for blog is taken from http://healthysleep.med.harvard.edu/healthy/getting/overcoming/tips
 
 I used the AOS animation on home page from https://michalsnik.github.io/aos/
 
